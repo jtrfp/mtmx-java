@@ -52,10 +52,10 @@ public class BinFileTest {
 		}
 	}
 
-	@Test
-	public void testGetDataMtm1() throws IOException, FileStoreException, FileLoadException {
-		testSkeleton("MTM1", ITestConfig.MTM1_DIR);
-	}
+//	@Test
+//	public void testGetDataMtm1() throws IOException, FileStoreException, FileLoadException {
+//		testSkeleton("MTM1", ITestConfig.MTM1_DIR);
+//	}
 
 	@Test
 	public void testGetDataMtm2() throws IOException, FileStoreException, FileLoadException {

@@ -17,9 +17,12 @@
 package de.stefanteitge.mtmx.core;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
 import de.stefanteitge.mtmx.core.file.FileStoreException;
@@ -28,8 +31,9 @@ import de.stefanteitge.mtmx.core.file.pod.PodIniFile;
 import de.stefanteitge.mtmx.core.file.pod.PodLstFile;
 
 public class PodLstFileTest {
-
-	private static final String CREATED_FILE_NAME = "created.lst";
+	
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
 
 	private static final int CHECK_INDEX = 17;
 
@@ -62,14 +66,14 @@ public class PodLstFileTest {
 	}
 	
 	@Test
-	public void testCreateNew() throws FileLoadException, FileStoreException {
+	public void testCreateNew() throws FileLoadException, FileStoreException, IOException {
 		PodLstFile plf = PodLstFile.createNew();
 
 		for (int i = 0; i < CREATE_COUNT; i++) {
 			plf.addEntry(TEST_ENTRY);
 		}
 
-		File createdPodIni = new File(ITestConfig.OUT_DIR, CREATED_FILE_NAME);
+		File createdPodIni = temporaryFolder.newFile();
 
 		plf.toFile(createdPodIni);
 
@@ -82,11 +86,11 @@ public class PodLstFileTest {
 	}
 	
 	@Test
-	public void testFromAndToFile() throws FileLoadException, FileStoreException {
+	public void testFromAndToFile() throws FileLoadException, FileStoreException, IOException {
 		PodLstFile plf = PodLstFile.createNew();
 		plf.addEntry(TEST_ENTRY);
 		
-		File createdFile = new File(ITestConfig.OUT_DIR, CREATED_FILE_NAME);
+		File createdFile = temporaryFolder.newFile();
 		
 		plf.toFile(createdFile);
 		

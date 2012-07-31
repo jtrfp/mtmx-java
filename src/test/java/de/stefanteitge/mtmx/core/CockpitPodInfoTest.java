@@ -20,9 +20,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
 import de.stefanteitge.mtmx.core.file.FileStoreException;
@@ -33,6 +36,9 @@ import de.stefanteitge.mtmx.core.file.pod.PodFile;
 
 public class CockpitPodInfoTest {
 
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+	
 	private static final int FILE_COUNT = 235;
 
 	private static final String COMMENT = "Cockpits are cool...";
@@ -81,7 +87,6 @@ public class CockpitPodInfoTest {
 	public void testEntrySize() throws FileLoadException {
 		IPodData podInfo = podFile.getData();
 
-
 		IPodFileEntry[] entries = podInfo.getEntries();
 		for (IPodFileEntry entry : entries) {
 			File filesDir = new File(ITestConfig.EXTRACTED_MTM2_FILES_DIR);
@@ -107,11 +112,11 @@ public class CockpitPodInfoTest {
 	}
 
 	@Test
-	public void testGetOutputStream() throws FileLoadException, FileStoreException {
+	public void testGetOutputStream() throws FileLoadException, FileStoreException, IOException {
 		IPodFileEntry[] entries = podFile.getData().getEntries();
 		IPodFileEntry entry1 = entries[1];
 
-		File file = new File("out/getOutputStream.act");
+		File file = temporaryFolder.newFile();
 		entry1.toFile(file);
 	}
 

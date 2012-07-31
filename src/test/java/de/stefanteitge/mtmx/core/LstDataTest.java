@@ -22,7 +22,9 @@ import java.io.File;
 import java.io.IOException;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
 import de.stefanteitge.mtmx.core.file.FileStoreException;
@@ -37,7 +39,11 @@ import de.stefanteitge.mtmx.core.file.pod.PodFile;
  */
 public class LstDataTest {
 
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+	
 	private static final String ENTRY1 = "foo.bar";
+	
 	private static final String ENTRY2 = "bar.foo";
 
 	/**
@@ -66,7 +72,7 @@ public class LstDataTest {
 		LstData lstData = new LstData();
 		lstData.addEntry(ENTRY1);
 		lstData.addEntry(ENTRY2);
-		File file = File.createTempFile("mtmx.test.", ".lst.tmp");
+		File file = temporaryFolder.newFile();
 		lstData.toFile(file);
 
 		LstFile lstFile = new LstFile(file);

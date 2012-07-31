@@ -17,9 +17,12 @@
 package de.stefanteitge.mtmx.core;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
 import de.stefanteitge.mtmx.core.file.FileStoreException;
@@ -29,6 +32,9 @@ import de.stefanteitge.mtmx.core.tri.ITriGameDir;
 
 public class PodIniFileTest {
 
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+	
 	private static final String COCKPIT_POD = "cockpit.pod";
 
 	private static final String TEST_POD = "test.pod";
@@ -69,14 +75,14 @@ public class PodIniFileTest {
 	}
 	
 	@Test
-	public void testModifyMtm2PodIni() throws FileLoadException, FileStoreException {
+	public void testModifyMtm2PodIni() throws FileLoadException, FileStoreException, IOException {
 		File podIni = getMtm2PodIni();
 		
 		PodIniFile pif = PodIniFile.fromFile(podIni);
 
 		pif.addEntry(TEST_POD);
 
-		File modifiedPodIni = new File(ITestConfig.OUT_DIR, "modified.ini");
+		File modifiedPodIni = temporaryFolder.newFile();
 
 		pif.toFile(modifiedPodIni);
 
@@ -90,14 +96,14 @@ public class PodIniFileTest {
 	}
 	
 	@Test
-	public void testCreatePodIni() throws FileLoadException, FileStoreException {
+	public void testCreatePodIni() throws FileLoadException, FileStoreException, IOException {
 		PodIniFile pif = PodIniFile.createNew();
 
 		for (int i = 0; i < CREATE_COUNT; i++) {
 			pif.addEntry(TEST_POD);
 		}
 
-		File createdPodIni = new File(ITestConfig.OUT_DIR, "created.ini");
+		File createdPodIni = temporaryFolder.newFile();
 
 		pif.toFile(createdPodIni);
 

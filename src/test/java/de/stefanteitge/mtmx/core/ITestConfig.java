@@ -18,21 +18,11 @@ package de.stefanteitge.mtmx.core;
 
 public interface ITestConfig {
 
-	/**
-	 * To this folder all temporary or test outputs go to.
-	 */
-	String OUT_DIR = "C:\\Temp\\mtmX";
-	
-	String BLAIR1_DIR = "C:\\Temp\\mtmX\\Games\\Blair Witch 1";
+	String BLAIR1_DIR = "C:\\Temp\\mtmX\\Data\\Blair1";
 
-	String MTM1_DIR = "C:\\Temp\\mtmX\\Games\\MTM";
+	String MTM1_DIR = "C:\\Temp\\mtmX\\Data\\MTM";
 
-	String MTM2_DIR = "C:\\Temp\\mtmX\\Games\\MTM2\\";
+	String MTM2_DIR = "C:\\Temp\\mtmX\\Data\\MTM2\\";
 
-	String EXTRACTED_MTM2_FILES_DIR = "C:\\Temp\\mtmX\\Dump\\MTM2";
-
-	String HELLBENDER_DIR = "C:\\Temp\\mtmX\\Games\\Hellbender\\";
-
-	String NOCTURNE_DIR = "C:\\Temp\\mtmX\\Games\\Nocturne\\";
-
+	String EXTRACTED_MTM2_FILES_DIR = "C:\\Temp\\mtmX\\Data\\MTM2_Dump\\";
 }

@@ -29,7 +29,7 @@ import de.stefanteitge.mtmx.core.file.trk.TrkFile;
 
 public class TrkFileTest {
 
-	private static final String TRUCK_PATH = "truck\\digger.trk";
+	private static final String TRUCK_PATH = "TRUCK\\DIGGER.TRK";
 
 	private TrkFile trkFile;
 

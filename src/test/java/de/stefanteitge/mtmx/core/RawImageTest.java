@@ -17,18 +17,25 @@
 package de.stefanteitge.mtmx.core;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
+import de.stefanteitge.mtmx.core.file.FileStoreException;
 import de.stefanteitge.mtmx.core.file.act.ActFile;
 import de.stefanteitge.mtmx.core.file.raw.RawFile;
 import de.stefanteitge.mtmx.core.file.raw.RawImage;
 
 public class RawImageTest {
 
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+	
 	private RawImage rawImage;
 
 	@Before
@@ -45,8 +52,8 @@ public class RawImageTest {
 	}
 
 	@Test
-	public void testStoreAsBitmap() throws Exception {
-		File bitmapFile = new File("out/C8OFF31.bmp");
+	public void testStoreAsBitmap() throws IOException, FileStoreException  {
+		File bitmapFile = temporaryFolder.newFile();
 		rawImage.storeAsBitmap(bitmapFile);
 
 		Assert.assertTrue("Bitmap has not been created.", bitmapFile.exists());

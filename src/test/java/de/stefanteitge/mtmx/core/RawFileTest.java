@@ -32,7 +32,7 @@ public class RawFileTest {
 
 	@Before
 	public void setUp() {
-		File file = new File(ITestConfig.EXTRACTED_MTM2_FILES_DIR, "art/C8OFF31.RAW");
+		File file = new File(ITestConfig.EXTRACTED_MTM2_FILES_DIR, "ART/C8OFF31.RAW");
 
 		Assert.assertTrue("Raw file does not exist.", file.exists());
 

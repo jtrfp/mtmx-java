@@ -1,9 +1,12 @@
 package de.stefanteitge.mtmx.core;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
 import de.stefanteitge.mtmx.core.file.FileStoreException;
@@ -12,6 +15,9 @@ import de.stefanteitge.mtmx.core.file.pod.PodFile;
 import de.stefanteitge.mtmx.core.file.pod.PodLstFile;
 
 public class PodFileTest {
+	
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
 	
 	private static final String LST_FILE_NAME = "cockpit.lst";
 	
@@ -28,11 +34,11 @@ public class PodFileTest {
 	}
 	
 	@Test
-	public void testCreateFromLst() throws FileLoadException, FileStoreException {
+	public void testCreateFromLst() throws FileLoadException, FileStoreException, IOException {
 		PodFile podFile = getMtm2PodFile();
 
 		PodLstFile plf = PodLstFile.fromPodData(podFile.getData());
-		File outDir = new File(ITestConfig.OUT_DIR);
+		File outDir = temporaryFolder.newFolder();
 		File file = new File(outDir, LST_FILE_NAME);
 		plf.toFile(file);
 		

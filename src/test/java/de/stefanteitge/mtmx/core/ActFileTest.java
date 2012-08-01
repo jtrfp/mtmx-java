@@ -17,18 +17,25 @@
 package de.stefanteitge.mtmx.core;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.stefanteitge.mtmx.core.file.FileLoadException;
+import de.stefanteitge.mtmx.core.file.FileStoreException;
 import de.stefanteitge.mtmx.core.file.act.ActColor;
 import de.stefanteitge.mtmx.core.file.act.ActFile;
 
 
 public class ActFileTest {
 
+	@Rule
+    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+	
 	private static final int COLOR_COUNT = 256;
 
 	private static final ActColor COLOR_37 = new ActColor(0x3A, 0x2B, 0x21);
@@ -57,8 +64,8 @@ public class ActFileTest {
 	}
 
 	@Test
-	public void testStoreAsBitmap() throws Exception {
-		File bitmapFile = new File("out/CRAZY98.act.bmp");
+	public void testStoreAsBitmap() throws IOException, FileStoreException, FileLoadException  {
+		File bitmapFile = temporaryFolder.newFile();
 		actFile.getData().toBitmapFile(bitmapFile);
 
 		Assert.assertTrue("Bitmap has not been created.", bitmapFile.exists());

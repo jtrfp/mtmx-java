@@ -1,0 +1,9 @@
+Package: mtmx-core
+Version: 0.1.0
+Section: devel
+Priority: optional
+Architecture: all
+Depends: jdk (>= 1.5)
+Maintainer: Stefan Teitge <stefan.teitge@gmail.com>
+Description: Tools for terminal Reality Games
+Distribution: development

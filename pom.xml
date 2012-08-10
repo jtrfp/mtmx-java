@@ -1,20 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.stefanteitge.mtmx</groupId>
-  <artifactId>core</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>de.stefanteitge</groupId>
+	<artifactId>mtmx-core</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>core</name>
-  <url>http://maven.apache.org</url>
+	<name>mtmX Core</name>
+	<url>http://code.google.com/p/mtmx/</url>
+  
+  	<developers>
+		<developer>
+			<id>stefanteitge</id>
+			<name>Stefan Teitge</name>
+			<email>stefan.teitge@gmail.com</email>
+			<url>http://www.stefanteitge.de</url>
+		</developer>
+	</developers>
+		
+	<licenses>
+       <license>
+           <name>GNU General Public License Version 3</name>
+           <url>http://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+        </license>
+    </licenses>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<maven.compiler.target>1.6</maven.compiler.target>
-    <maven.compiler.source>1.6</maven.compiler.source>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+	</properties>
 
 	<build>
 	    <plugins>

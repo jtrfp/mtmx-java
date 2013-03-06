@@ -34,6 +34,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>jtrfp</groupId>
+			<artifactId>jtrfp</artifactId>
+			<version>0.0.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>

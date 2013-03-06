@@ -18,14 +18,14 @@ package de.stefanteitge.mtmx.core;
 
 import java.io.File;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.act.IActPodFileEntry;
+import jtrfp.common.pod.IPodFileEntry;
+import jtrfp.common.pod.PodFile;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.act.IActPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.IPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
 
 public class ActDataTest {
 

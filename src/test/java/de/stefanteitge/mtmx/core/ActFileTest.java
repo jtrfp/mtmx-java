@@ -19,16 +19,16 @@ package de.stefanteitge.mtmx.core;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.act.ActColor;
+import jtrfp.common.act.ActFile;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.act.ActColor;
-import de.stefanteitge.mtmx.core.file.act.ActFile;
 
 
 public class ActFileTest {

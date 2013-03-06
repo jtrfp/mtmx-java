@@ -20,12 +20,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.trk.ITrkData;
+import jtrfp.common.trk.TrkFile;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.trk.ITrkData;
-import de.stefanteitge.mtmx.core.file.trk.TrkFile;
 
 public class TrkFileTest {
 

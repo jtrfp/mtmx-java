@@ -19,15 +19,15 @@ package de.stefanteitge.mtmx.core;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.bin.IBinPodFileEntry;
+import jtrfp.common.pod.PodFile;
+import jtrfp.game.GameDirFactory;
+import jtrfp.game.ITriGameDir;
+
 import org.junit.Assert;
 import org.junit.Test;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.bin.IBinPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
-import de.stefanteitge.mtmx.core.tri.GameDirFactory;
-import de.stefanteitge.mtmx.core.tri.ITriGameDir;
 
 public class BinFileTest {
 

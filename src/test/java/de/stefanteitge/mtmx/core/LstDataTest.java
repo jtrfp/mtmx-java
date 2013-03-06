@@ -21,17 +21,17 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.lst.ILstData;
+import jtrfp.common.lst.LstData;
+import jtrfp.common.lst.LstFile;
+import jtrfp.common.pod.PodFile;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.lst.ILstData;
-import de.stefanteitge.mtmx.core.file.lst.LstData;
-import de.stefanteitge.mtmx.core.file.lst.LstFile;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
 
 /**
  * Tests for {@link LstData} and {@link LstFile}.

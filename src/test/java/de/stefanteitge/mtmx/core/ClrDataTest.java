@@ -18,15 +18,15 @@ package de.stefanteitge.mtmx.core;
 
 import java.io.File;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.clr.IClrData;
+import jtrfp.common.clr.IClrPodFileEntry;
+import jtrfp.common.pod.IPodFileEntry;
+import jtrfp.common.pod.PodFile;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.clr.IClrData;
-import de.stefanteitge.mtmx.core.file.clr.IClrPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.IPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
 
 public class ClrDataTest {
 

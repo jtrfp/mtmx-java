@@ -19,16 +19,16 @@ package de.stefanteitge.mtmx.core;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.pod.PodFile;
+import jtrfp.common.pod.PodIniFile;
+import jtrfp.common.pod.PodLstFile;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
-import de.stefanteitge.mtmx.core.file.pod.PodIniFile;
-import de.stefanteitge.mtmx.core.file.pod.PodLstFile;
 
 public class PodLstFileTest {
 	

@@ -18,13 +18,13 @@ package de.stefanteitge.mtmx.core;
 
 import java.io.File;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.raw.IRawData;
+import jtrfp.common.raw.RawFile;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.raw.IRawData;
-import de.stefanteitge.mtmx.core.file.raw.RawFile;
 
 public class RawFileTest {
 

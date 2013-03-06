@@ -19,17 +19,17 @@ package de.stefanteitge.mtmx.core;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.act.ActFile;
+import jtrfp.common.raw.RawFile;
+import jtrfp.common.raw.RawImage;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.act.ActFile;
-import de.stefanteitge.mtmx.core.file.raw.RawFile;
-import de.stefanteitge.mtmx.core.file.raw.RawImage;
 
 public class RawImageTest {
 

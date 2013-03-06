@@ -22,17 +22,17 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
 
+import jtrfp.common.FileLoadException;
+import jtrfp.common.FileStoreException;
+import jtrfp.common.internal.pod.Pod1Loader;
+import jtrfp.common.pod.IPodData;
+import jtrfp.common.pod.IPodFileEntry;
+import jtrfp.common.pod.PodFile;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
-import de.stefanteitge.mtmx.core.file.FileLoadException;
-import de.stefanteitge.mtmx.core.file.FileStoreException;
-import de.stefanteitge.mtmx.core.file.internal.pod.Pod1Loader;
-import de.stefanteitge.mtmx.core.file.pod.IPodData;
-import de.stefanteitge.mtmx.core.file.pod.IPodFileEntry;
-import de.stefanteitge.mtmx.core.file.pod.PodFile;
 
 public class CockpitPodInfoTest {
 

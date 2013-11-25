@@ -1,3 +1,5 @@
+# mtmX documentation
+
 Welcome to the mtmX wiki!
 
 * [How to enable Torture Pit in MTM2?](HowToEnableTorturePit.md)

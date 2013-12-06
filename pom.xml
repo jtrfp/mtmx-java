@@ -2,13 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
   
-	<groupId>de.stefanteitge</groupId>
-	<artifactId>mtmx-core</artifactId>
+	<groupId>org.jtrfp</groupId>
+	<artifactId>mtmx</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>mtmX Core</name>
-	<url>http://code.google.com/p/mtmx/</url>
+	<name>mtmX</name>
+	<description>Remake of Monster Truck Madness games</description>
+	<url>http://www.jtrfp.org/</url>
   
   	<developers>
 		<developer>
@@ -34,19 +35,13 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>jtrfp</groupId>
-			<artifactId>jtrfp</artifactId>
-			<version>0.0.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>jtrfp</groupId>
+			<groupId>org.jtrfp</groupId>
 			<artifactId>jtrfp</artifactId>
 			<version>0.0.1</version>
 		</dependency>
@@ -61,50 +56,50 @@
 			<version>2.8.4</version>
 		</dependency>
 	</dependencies>
-  
+
 	<build>
 		<plugins>
 			<plugin>
-	            <artifactId>jdeb</artifactId>
-	            <groupId>org.vafer</groupId>
-	            <version>0.11</version>
-	            <executions>
-	                <execution>
-	                    <phase>package</phase>
-	                    <goals>
-	                        <goal>jdeb</goal>
-	                    </goals>
-	                    <configuration>
-	                        <dataSet>
-	                            <data>
-	                                <src>${project.build.directory}/${project.build.finalName}.jar</src>
-	                                <type>file</type>
-	                                <mapper>
-	                                  <type>perm</type>
-	                                  <prefix>/usr/share/jdeb/lib</prefix>
-	                                </mapper>
-	                            </data>
-	                        </dataSet>
-	                    </configuration>
-	                </execution>
-	            </executions>
-	        </plugin>
-		
-			<plugin>
-		        <groupId>com.googlecode.mavennatives</groupId>
-		        <artifactId>maven-nativedependencies-plugin</artifactId>
-		        <version>0.0.7</version>
-		        <executions>
-	                <execution>
-                        <id>unpacknatives</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-							<goal>copy</goal>
-                        </goals>
-	                </execution>
-		        </executions>
+				<artifactId>jdeb</artifactId>
+				<groupId>org.vafer</groupId>
+				<version>0.11</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jdeb</goal>
+						</goals>
+						<configuration>
+							<dataSet>
+								<data>
+									<src>${project.build.directory}/${project.build.finalName}.jar</src>
+									<type>file</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr/share/jdeb/lib</prefix>
+									</mapper>
+								</data>
+							</dataSet>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
-				  
+
+			<plugin>
+				<groupId>com.googlecode.mavennatives</groupId>
+				<artifactId>maven-nativedependencies-plugin</artifactId>
+				<version>0.0.7</version>
+				<executions>
+					<execution>
+						<id>unpacknatives</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -127,7 +122,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

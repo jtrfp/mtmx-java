@@ -18,6 +18,11 @@ package org.jtrfp.mtmx.tools;
 
 import java.io.File;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.GnuParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
 import org.jtrfp.jtrfp.game.GameDirFactory;
 import org.jtrfp.jtrfp.game.ITriGameDir;
 import org.jtrfp.jtrfp.pod.PodFile;
@@ -25,20 +30,40 @@ import org.jtrfp.mtmx.Engine;
 import org.jtrfp.mtmx.EngineException;
 import org.jtrfp.mtmx.tools.internal.WorldViewerConfiguration;
 
-
 public class WorldViewer {
 
 	public static void main(String[] args) {
+		Options options = new Options();
+		
+		Option gameDirOption = new Option("g", "game-dir", true, "the MTM 1 or 2 game directory (required)");
+		gameDirOption.setRequired(true);
+		options.addOption(gameDirOption);
+		
+		Option podFileOption = new Option("p", "pod-file", true, "the POD file to use (required)");
+		podFileOption.setRequired(true);
+		options.addOption(podFileOption);
+		
+		Option heightMapOption = new Option("h", "height-map", true, "the height map in the pod file (required)");
+		heightMapOption.setRequired(true);
+		options.addOption(heightMapOption);
+		
+		GnuParser parser = new GnuParser();
+		CommandLine commandLine = null;
 		try {
-			if (args.length != 3) {
-				String msg = "You must provide game dir, POD file name and height map path as arguments.";
-				System.out.println(msg);
-				System.exit(1);
-			}
-			(new WorldViewer()).run(args[0], args[1], args[2]);
+			commandLine = parser.parse(options, args);
+		} catch (Exception e) {
+			HelpFormatter formatter = new HelpFormatter();
+			formatter.printHelp("mtmx-world-viewer [OPTIONS...]", options);
+			System.exit(1);
+		}
+		
+		try {
+			WorldViewer viewer = new WorldViewer();
+			viewer.run(commandLine.getOptionValue("g"), commandLine.getOptionValue("p"), commandLine.getOptionValue("h"));
 		} catch (ViewerException e) {
 			e.printStackTrace();
 		}
+		
 		System.exit(0);
 	}
 

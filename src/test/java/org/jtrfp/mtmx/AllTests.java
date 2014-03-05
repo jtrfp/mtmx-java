@@ -21,21 +21,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ActDataTest.class,
-	ActFileTest.class,
-	BinFileTest.class,
-	ClrDataTest.class,
-	CockpitPodInfoTest.class,
-	KfmFileTest.class,
-	LstDataTest.class,
-	PodFileTest.class,
-	PodIniFileTest.class,
-	PodLstFileTest.class,
-	RawDecodeTest.class,
-	RawFileTest.class,
-	RawImageTest.class,
-	SitDataTest.class,
-	TrkFileTest.class
+	TextureLoaderTest.class
 })
 
 public class AllTests {

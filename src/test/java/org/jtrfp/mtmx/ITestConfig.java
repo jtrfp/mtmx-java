@@ -18,16 +18,5 @@ package org.jtrfp.mtmx;
 
 public interface ITestConfig {
 
-	/**
-	 * This folder holds all temporary files or test outputs.
-	 */
-	String OUT_DIR = "C:\\Temp\\mtmX\\Out";
-
 	String MTM2_DIR = "C:\\Temp\\mtmX\\Data\\MTM2\\";
-	
-	String BLAIR1_DIR = "C:\\Temp\\mtmX\\Data\\Blair1";
-
-	String MTM1_DIR = "C:\\Temp\\mtmX\\Data\\MTM";
-
-	String EXTRACTED_MTM2_FILES_DIR = "C:\\Temp\\mtmX\\Data\\MTM2_Dump\\";
 }
